@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式布局练习 - 现代网站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>🎨 ModernSite</h2>
+            </div>
+            
+            <!-- 汉堡菜单按钮 -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- 导航菜单 -->
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="active">首页</a></li>
+                <li><a href="#features">特性</a></li>
+                <li><a href="#gallery">画廊</a></li>
+                <li><a href="#pricing">价格</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">响应式设计的力量</h1>
+                <p class="hero-description">
+                    学习如何创建在任何设备上都完美展示的网站。
+                    从桌面到移动端，提供一致的用户体验。
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">开始学习</button>
+                    <button class="btn btn-secondary">了解更多</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-placeholder">
+                    <span>📱💻🖥️</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 特性区域 -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">核心特性</h2>
+            <p class="section-subtitle">响应式设计的关键要素</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>移动优先</h3>
+                    <p>从小屏幕开始设计，逐步增强到大屏幕，确保最佳性能。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>弹性布局</h3>
+                    <p>使用 Flexbox 和 Grid 创建灵活的布局系统。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🖼️</div>
+                    <h3>弹性图片</h3>
+                    <p>图片自动适应容器大小，支持不同分辨率。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📐</div>
+                    <h3>媒体查询</h3>
+                    <p>根据不同设备特征应用不同的样式规则。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>性能优化</h3>
+                    <p>优化加载速度，提供流畅的用户体验。</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h3>无障碍访问</h3>
+                    <p>确保所有用户都能轻松访问和使用。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 图片画廊 -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">响应式图片画廊</h2>
+            <p class="section-subtitle">自适应不同设备的网格布局</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/400/300?random=1" alt="图片 1">
+                    <div class="gallery-overlay">
+                        <h3>项目标题 1</h3>
+                        <p>项目描述</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/400/300?random=2" alt="图片 2">
+                    <div class="gallery-overlay">
+                        <h3>项目标题 2</h3>
+                        <p>项目描述</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/400/300?random=3" alt="图片 3">
+                    <div class="gallery-overlay">
+                        <h3>项目标题 3</h3>
+                        <p>项目描述</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/400/300?random=4" alt="图片 4">
+                    <div class="gallery-overlay">
+                        <h3>项目标题 4</h3>
+                        <p>项目描述</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/400/300?random=5" alt="图片 5">
+                    <div class="gallery-overlay">
+                        <h3>项目标题 5</h3>
+                        <p>项目描述</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/400/300?random=6" alt="图片 6">
+                    <div class="gallery-overlay">
+                        <h3>项目标题 6</h3>
+                        <p>项目描述</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 价格区域 -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">灵活的定价方案</h2>
+            <p class="section-subtitle">选择最适合您的方案</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>基础版</h3>
+                        <div class="price">
+                            <span class="currency">¥</span>
+                            <span class="amount">0</span>
+                            <span class="period">/月</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✅ 基础功能</li>
+                        <li>✅ 1GB 存储空间</li>
+                        <li>✅ 邮件支持</li>
+                        <li>❌ 高级功能</li>
+                        <li>❌ 优先支持</li>
+                    </ul>
+                    <button class="btn btn-outline">开始使用</button>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="badge">最受欢迎</div>
+                    <div class="pricing-header">
+                        <h3>专业版</h3>
+                        <div class="price">
+                            <span class="currency">¥</span>
+                            <span class="amount">99</span>
+                            <span class="period">/月</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✅ 所有基础功能</li>
+                        <li>✅ 10GB 存储空间</li>
+                        <li>✅ 24/7 支持</li>
+                        <li>✅ 高级功能</li>
+                        <li>✅ 优先支持</li>
+                    </ul>
+                    <button class="btn btn-primary">立即购买</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>企业版</h3>
+                        <div class="price">
+                            <span class="currency">¥</span>
+                            <span class="amount">299</span>
+                            <span class="period">/月</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>✅ 所有专业功能</li>
+                        <li>✅ 无限存储空间</li>
+                        <li>✅ 专属客服</li>
+                        <li>✅ 定制开发</li>
+                        <li>✅ SLA 保证</li>
+                    </ul>
+                    <button class="btn btn-outline">联系我们</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系区域 -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+            <p class="section-subtitle">有问题？我们随时为您服务</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <div>
+                            <h4>邮箱</h4>
+                            <p>contact@modernsite.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">📱</div>
+                        <div>
+                            <h4>电话</h4>
+                            <p>400-123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <h4>地址</h4>
+                            <p>北京市朝阳区科技园</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" placeholder="请输入您的姓名">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">邮箱</label>
+                        <input type="email" id="email" placeholder="请输入您的邮箱">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">消息</label>
+                        <textarea id="message" rows="5" placeholder="请输入您的消息"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">发送消息</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ModernSite</h3>
+                    <p>打造响应式网站的最佳实践</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#features">特性</a></li>
+                        <li><a href="#gallery">画廊</a></li>
+                        <li><a href="#pricing">价格</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>资源</h4>
+                    <ul>
+                        <li><a href="#">文档</a></li>
+                        <li><a href="#">教程</a></li>
+                        <li><a href="#">博客</a></li>
+                        <li><a href="#">支持</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>关注我们</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub">🐙</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="微信">💬</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ModernSite. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

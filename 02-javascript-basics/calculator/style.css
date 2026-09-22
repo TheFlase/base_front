@@ -1,0 +1,305 @@
+/* ==================== 全局样式 ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --secondary: #ec4899;
+    --text-dark: #1e293b;
+    --text-light: #ffffff;
+    --bg-calculator: #1e293b;
+    --bg-display: #0f172a;
+    --bg-button: #334155;
+    --bg-button-hover: #475569;
+    --bg-operator: #6366f1;
+    --bg-equals: #ec4899;
+    --shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+}
+
+/* ==================== 计算器外壳 ==================== */
+.calculator {
+    background-color: var(--bg-calculator);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+/* ==================== 显示屏 ==================== */
+.display {
+    background-color: var(--bg-display);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    min-height: 1.5rem;
+}
+
+.current-operand {
+    color: var(--text-light);
+    font-size: 2.5rem;
+    font-weight: 700;
+    min-height: 3rem;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* 滚动条样式 */
+.current-operand::-webkit-scrollbar {
+    height: 4px;
+}
+
+.current-operand::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.current-operand::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+/* ==================== 按钮区域 ==================== */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+}
+
+.btn {
+    background-color: var(--bg-button);
+    color: var(--text-light);
+    border: none;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.btn:hover {
+    background-color: var(--bg-button-hover);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* 数字按钮 */
+.btn-number {
+    background-color: var(--bg-button);
+}
+
+/* 0 按钮占两列 */
+.btn-zero {
+    grid-column: span 2;
+}
+
+/* 功能按钮（AC、DEL、%） */
+.btn-function {
+    background-color: var(--bg-operator);
+}
+
+.btn-function:hover {
+    background-color: var(--primary-dark);
+}
+
+/* 运算符按钮 */
+.btn-operator {
+    background-color: var(--bg-operator);
+    font-size: 2rem;
+}
+
+.btn-operator:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-operator.active {
+    background-color: var(--primary-dark);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+/* 等号按钮 */
+.btn-equals {
+    background-color: var(--bg-equals);
+    font-size: 2rem;
+}
+
+.btn-equals:hover {
+    background-color: #db2777;
+}
+
+/* ==================== 使用说明 ==================== */
+.instructions {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.instructions h3 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.instructions ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.instructions li {
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.instructions li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.instructions strong {
+    color: var(--primary);
+}
+
+/* ==================== 动画效果 ==================== */
+@keyframes buttonPress {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn.pressed {
+    animation: buttonPress 0.1s ease;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.display.error {
+    animation: shake 0.3s ease;
+}
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .calculator {
+        padding: 1rem;
+    }
+    
+    .display {
+        padding: 1rem;
+        min-height: 100px;
+    }
+    
+    .current-operand {
+        font-size: 2rem;
+    }
+    
+    .previous-operand {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 1.2rem;
+        font-size: 1.3rem;
+    }
+    
+    .btn-operator,
+    .btn-equals {
+        font-size: 1.5rem;
+    }
+    
+    .buttons {
+        gap: 0.5rem;
+    }
+    
+    .instructions {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .btn {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+    
+    .current-operand {
+        font-size: 1.8rem;
+    }
+}
+
+/* ==================== 打印样式 ==================== */
+@media print {
+    body {
+        background: white;
+    }
+    
+    .calculator {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .instructions {
+        page-break-before: always;
+    }
+}
+

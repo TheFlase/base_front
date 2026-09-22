@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交互式问答游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-app">
+            <!-- 开始页面 -->
+            <div id="startScreen" class="screen active">
+                <div class="start-content">
+                    <h1>🎯 JavaScript 知识问答</h1>
+                    <p class="subtitle">测试你的 JavaScript 知识水平</p>
+                    <div class="quiz-info">
+                        <div class="info-item">
+                            <span class="icon">📝</span>
+                            <div>
+                                <strong>10 道题目</strong>
+                                <p>涵盖 JS 基础知识</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">⏱️</span>
+                            <div>
+                                <strong>无时间限制</strong>
+                                <p>慢慢思考，选择答案</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="icon">🏆</span>
+                            <div>
+                                <strong>即时反馈</strong>
+                                <p>答题后立即查看结果</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="startBtn" class="btn btn-primary">开始答题</button>
+                </div>
+            </div>
+
+            <!-- 问答页面 -->
+            <div id="quizScreen" class="screen">
+                <!-- 进度条 -->
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                
+                <!-- 问题信息 -->
+                <div class="question-info">
+                    <span class="question-number" id="questionNumber">问题 1 / 10</span>
+                    <span class="score">得分: <span id="currentScore">0</span></span>
+                </div>
+                
+                <!-- 问题 -->
+                <div class="question-container">
+                    <h2 id="question" class="question">问题会显示在这里</h2>
+                </div>
+                
+                <!-- 选项 -->
+                <div id="answers" class="answers"></div>
+                
+                <!-- 下一题按钮 -->
+                <button id="nextBtn" class="btn btn-primary" style="display: none;">下一题</button>
+            </div>
+
+            <!-- 结果页面 -->
+            <div id="resultScreen" class="screen">
+                <div class="result-content">
+                    <div class="result-icon" id="resultIcon">🎉</div>
+                    <h2 id="resultTitle" class="result-title">太棒了！</h2>
+                    <div class="final-score">
+                        <span id="finalScore">0</span>
+                        <span class="score-total">/ 100</span>
+                    </div>
+                    <p id="resultMessage" class="result-message">你的表现非常出色！</p>
+                    
+                    <div class="result-stats">
+                        <div class="stat">
+                            <span class="stat-value" id="correctAnswers">0</span>
+                            <span class="stat-label">答对</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="wrongAnswers">0</span>
+                            <span class="stat-label">答错</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value" id="accuracy">0%</span>
+                            <span class="stat-label">正确率</span>
+                        </div>
+                    </div>
+                    
+                    <div class="result-actions">
+                        <button id="restartBtn" class="btn btn-primary">再来一次</button>
+                        <button id="reviewBtn" class="btn btn-secondary">查看答案</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
