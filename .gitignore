@@ -19,13 +19,16 @@ out/
 .env.production.local
 
 # IDE 和编辑器
-.vscode/
 .idea/
 *.swp
 *.swo
 *~
 .DS_Store
 .claude/
+
+# VSCode 配置文件(团队约定提交,个人文件忽略)
+.vscode/launch.json
+.vscode/*.code-workspace
 
 # 临时文件
 *.log
@@ -38,7 +41,6 @@ coverage/
 *.lcov
 
 # 调试
-.vscode/launch.json
 
 # 操作系统
 Thumbs.db
